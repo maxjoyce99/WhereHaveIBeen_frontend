@@ -1,0 +1,491 @@
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background: #d0d3df;
+  margin: 0;
+  font-family: "Libre Franklin", "Verdana", "Geneva", sans-serif;
+  max-width:100%;
+  font-size: 1em;
+}
+
+#root{
+  height: 100%;
+}
+
+.button {
+  height: 10px;
+}
+
+.map{
+  height:95%;
+  width:100%;
+  top: 3%;
+  left: 0%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.home_map{
+  width:55%;
+  height:80%;
+  top: 2.5%;
+  position: absolute;
+  overflow: hidden;
+  left: 1%;
+}
+
+.home_buttons {
+  width: 50%;
+  bottom: 15%;
+  position:absolute;
+  left: 45%;
+}
+
+.example_map {
+  width:50%;
+  top:30%;
+  position: absolute;
+  left: 1%;
+}
+
+.navbar {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 5%;
+  max-height:100%;
+  display: flex;
+  justify-content: right;
+  background: #0363cf;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.nav-element{
+  padding-left: 2%;
+  padding-right: 2%;
+  display: inline-block;
+  color:#edf0f1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  height: 5%;
+}
+
+
+.logo{
+  width: 5%;
+  cursor: pointer;
+  margin-right: auto;
+  height: 100%;
+}
+
+
+
+.nav-element :hover {
+  color: rgb(85, 85, 85);
+}
+
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages{
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.signIn{
+  padding: 20px;
+}
+
+.edit{
+  padding: 0px;
+}
+
+.imageUpload{
+  top: 75%;
+  right: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: fixed;
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 4px;
+  float: right;
+  height: 12%;
+  margin: 10px;
+}
+
+.batchUploadToggle{
+  position: fixed;
+  right: 16.25%;
+  bottom: 38.75%;
+}
+
+
+.locations{
+  padding: 20px 20px;
+  border-spacing: 20px;
+  width: 70%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  row-gap: 0px;
+  float:none;
+  top: 10%
+}
+
+
+.location-details{
+  color:"black";
+  border: 2px solid black;
+  border-radius: 4px;
+  padding-bottom: 12px;
+  padding-right:20px;
+  padding-left:20px;
+  position: relative;
+  width: 85%;
+  height: 80%;
+}
+
+.deletelocation{
+  bottom: 2px;
+  right: 3px;
+  position: absolute;
+  border: 1px solid black;
+  background-color: white;
+  width: 20%;
+  height: 20%;
+  padding: 0px;
+  margin:10px;
+  color: #e7195a;
+  cursor: pointer;
+}
+
+.deletelocation:hover {
+  background: #e7e7e7;
+}
+
+.modifylocation{
+  bottom: 40%;
+  right: 3px;
+  position: absolute;
+  border: 1px solid black;
+  background-color: white;
+  width: 20%;
+  height: 20%;
+  padding: 0px;
+  color: blue;
+  cursor: pointer;
+  margin:10px;
+}
+
+.modifylocation:hover {
+  background: #e7e7e7;
+}
+
+
+
+
+
+.create input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  float: top;
+}
+
+.login-wrapper input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-wrapper {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.registerForm {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.registerForm input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formButtons{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  border-radius: 6px;
+  font-size:16px;
+  cursor: pointer;
+  margin: 4px 2px;
+}
+
+.formButtons:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.popup-btn-group button {
+  display: block; /* Make the buttons appear below each other */
+  width:100px;
+  
+}
+
+.pictures{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  position: relative;
+  background-color: #d0d3df;
+  width: 70%;
+}
+
+
+
+.example_images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 40%;
+  position: absolute;
+  right: 1%;
+  top: 7%;
+  grid-gap: 10px;
+}
+
+
+
+.home_words {
+  left: 1%;
+  position: absolute;
+}
+
+.example_image {
+  width: 100%;
+}
+
+
+.nameErrorSpan{
+  display: none;
+  color: red;
+}
+.latErrorSpan{
+  display: none;
+  color: red;
+}
+.longErrorSpan{
+  display: none;
+  color: red;
+}
+.submitError{
+  display: block;
+}
+
+.userCreated{
+  display: block;
+  color: green;
+}
+
+.createForm .nameInput:invalid[lastfocused = "nameInput"] ~ .nameErrorSpan {
+  display: block;
+}
+.createForm .latInput:invalid[lastfocused = "latInput"] ~ .latErrorSpan {
+  display: block;
+}
+.createForm .longInput:invalid[lastfocused = "longInput"] ~ .longErrorSpan {
+  display: block;
+}
+
+.create{
+  right: 20px;
+  padding: 20px 20px;
+  position: fixed;
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 4px;
+  float: right;
+  height: 50%;
+  margin: 10px;
+  top: 10%;
+}
+
+.createForm{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+}
+
+.location_tooltip {
+  max-width: 60%;
+  z-index: 10000;
+}
+
+.tooltip_button{
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  margin: 0%;
+  border: 2px solid black;
+  border-radius: 0px;
+  padding-left: 1%;
+  padding-right: 1%;
+  
+}
+
+
+
+.new_location_title{
+  position:absolute;
+  top: 3%;
+  left: 5%;
+  margin: 0px;
+}
+.submitError {
+  color:red;
+}
+
+.addFiles{
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.images{
+  width:100%
+}
+
+.deleteImage{
+  position: absolute;
+    z-index: 100;
+    background-color: #FFF;
+     
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.deleteImage:hover {
+  background: #e7e7e7;
+}
+
+.pendinglist{
+  position: absolute;
+  left: 40%;
+  padding: 20px 20px;
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  row-gap: 0px;
+  float:none;
+  top: 11%;
+}
+
+.pendingTitle {
+  position: absolute;
+  left: 40%;
+  top: 5%;
+  width: 30%;
+  padding: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+
+.friendslist{
+  position: absolute;
+  left: 2%;
+  padding: 10px;
+  padding: 20px 20px;
+  width: 30%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  row-gap: 0px;
+  float:none;
+  top: 11%;
+}
+
+
+.friendsTitle {
+  position: absolute;
+  left: 2%;
+  top: 5%;
+  width: 30%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.user-details{
+    color:"black";
+    border: 2px solid black;
+    border-radius: 4px;
+    padding-bottom: 12px;
+    padding-right:20px;
+    padding-left:20px;
+    position: relative;
+    width: 85%;
+    height: 80%;
+}
+
+html {
+  background: #d0d3df;
+}
+
+.newFriendForm{
+  right: 1%;
+  padding: 20px 20px;
+  position: fixed;
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 4px;
+  float: right;
+  height: 15%;
+  margin: 10px;
+  top: 10%;
+}
+
+.friendsAndPendingPage{
+  padding: 0 px;
+  height: 100%;
+}
