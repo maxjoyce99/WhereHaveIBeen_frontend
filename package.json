@@ -1,5 +1,5 @@
 {
-  "homepage": "http://maxjoyce99.github.io/mapping_project",
+  "homepage": ".",
   "proxy": "http://localhost:3001",
   "name": "client",
   "version": "0.1.0",
