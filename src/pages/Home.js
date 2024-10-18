@@ -14,6 +14,7 @@ import  example_map from '../images/example_map.png';
 import { useNavigate } from 'react-router';
 import Map from './Map';
 import { useLocationsContext } from '../hooks/useLocationsContext';
+var path = require('path');
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3001";
 
 
