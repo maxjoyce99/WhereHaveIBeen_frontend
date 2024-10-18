@@ -52,7 +52,9 @@ const Navbar = () => {
 
             <div className="navbar">
 
-                <img className='logo' src={logoImage}></img>
+                <div overflow='hidden'>
+                    <img height='auto' float='left' className='logo' src={logoImage}></img>
+                </div>
                 
 
                 <Link className="nav-element" to="/">
