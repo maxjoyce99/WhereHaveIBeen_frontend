@@ -29,7 +29,7 @@ const Home = () => {
     }
 
     const fetchLocations = async () => {
-      const response = await fetch('https://wherehaveibeenapi-production.up.railway.app/api/locations/getall/' + "64e653532e7d4c3970cb3dd1");
+      const response = await fetch(path.join(BACKEND_URL ,'/api/locations/getall/' , "64e653532e7d4c3970cb3dd1"));
       const json = await response.json();
 
 
