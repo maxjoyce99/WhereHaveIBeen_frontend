@@ -14,7 +14,7 @@ import  example_map from '../images/example_map.png';
 import { useNavigate } from 'react-router';
 import Map from './Map';
 import { useLocationsContext } from '../hooks/useLocationsContext';
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://localhost:3001';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
 
     const fetchLocations = async () => {
       console.log(BACKEND_URL);
-      const response = await fetch(BACKEND_URL +'/api/locations/getall/' + "64e653532e7d4c3970cb3dd1");
+      const response = await fetch(BACKEND_URL + '/api/locations/getall/' + "64e653532e7d4c3970cb3dd1");
       const json = await response.json();
 
 

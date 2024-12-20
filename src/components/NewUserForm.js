@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Popup } from 'react-leaflet';
 import { useNavigate } from "react-router-dom";
 import Login from './LoginForm';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 const NewUser = ({ setToken }) => {
 
@@ -37,11 +38,8 @@ const NewUser = ({ setToken }) => {
     }
 
     const registerUser = async(newUser) => {
-        const response = await fetch('/api/users/new' , {
+        const response = await fetch(BACKEND_URL + '/api/users/new' , {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
           body: JSON.stringify(newUser)
         });
 
