@@ -4,6 +4,7 @@ import  ModifyLocation  from '../components/ModifyLocation';
 import { useImageContext } from '../hooks/useImageContext';
 import useToken from "../hooks/useToken";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 const Modify = () => {
     const {imagePaths, dispatchImage} = useImageContext();
@@ -38,7 +39,7 @@ const Modify = () => {
             "picturePath" : path
         }
 
-        const response = await fetch('/api/pictures', {
+        const response = await fetch(BACKEND_URL + '/api/pictures', {
             method: 'DELETE',
             body: JSON.stringify(bodyObject),
             headers: {
@@ -58,7 +59,7 @@ const Modify = () => {
     useEffect(() => {
         console.log("Loading Pictures");
         const fetchFolder = async () => {
-            const fetchUrl = '/api/pictures/' + token._id  + "/" + location.state.id;
+            const fetchUrl = BACKEND_URL + '/api/pictures/' + token._id  + "/" + location.state.id;
             const response = await fetch(fetchUrl);
             const json = await response.json();
             //set array to nothing first in case of multiple loads

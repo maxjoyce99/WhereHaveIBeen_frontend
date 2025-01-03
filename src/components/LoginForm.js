@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import NewUser from '../components/NewUserForm';
+import useToken from '../hooks/useToken';
 
-const Login = ({ setToken }) => {
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
+
+const Login = () => {
+  const {token, setToken} = useToken();
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     const [error,setError] = useState(null);
@@ -12,17 +16,24 @@ const Login = ({ setToken }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = await loginUser({
+        const token = await loginUser(
           username,
           password
-        });
+        );
         console.log(token);
         setToken(token);
         window.location.reload();
     }
 
-    const loginUser = async(credentials) => {
-        const response = await fetch('/api/users/existing', {
+    const loginUser = async(username, password) => {
+
+
+      var credentials = {
+        username: username,
+        password: password,
+      }
+      console.log(JSON.stringify(credentials));
+        const response = await fetch(BACKEND_URL + '/api/users/existing', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

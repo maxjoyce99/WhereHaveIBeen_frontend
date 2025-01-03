@@ -3,6 +3,8 @@ import useToken from '../hooks/useToken';
 import { useFriendsContext } from '../hooks/useFriendsContext';
 import PendingUser from '../components/PendingUser';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 
 const AddFriendForm = () => {
     const {token, setToken} = useToken();
@@ -11,7 +13,7 @@ const AddFriendForm = () => {
 
     const nameSubmitted = async (e) => {
         e.preventDefault()
-        const response = await fetch('/api/users/requestuser', {
+        const response = await fetch(BACKEND_URL + '/api/users/requestuser', {
         method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'

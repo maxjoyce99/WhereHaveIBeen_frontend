@@ -5,6 +5,8 @@ import PendingUser from '../components/PendingUser';
 import { useFriendsContext } from '../hooks/useFriendsContext';
 import AddFriendForm from '../components/AddFriendForm';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const MapList = (props) => {
     const {friends, pending, dispatchFriend} = useFriendsContext();
     const {token, setToken} = useToken();
@@ -15,7 +17,7 @@ const MapList = (props) => {
     useEffect(() => {
         
         const fetchFriends = async () => {
-            const routePath = '/api/users/friendslist/' + token._id;
+            const routePath = BACKEND_URL + '/api/users/friendslist/' + token._id;
 
             const response = await fetch(routePath);
             
@@ -31,7 +33,7 @@ const MapList = (props) => {
         }
 
         const fetchPending = async () => {
-            const routePath = '/api/users/pendinglist/' + token._id;
+            const routePath = BACKEND_URL + '/api/users/pendinglist/' + token._id;
 
             const response = await fetch(routePath);
             

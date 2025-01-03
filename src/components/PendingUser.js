@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import { useFriendsContext } from "../hooks/useFriendsContext";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const PendingUser = (props) => {
     const {pending, friends, dispatchFriend} = useFriendsContext();
     const navigate = useNavigate();
@@ -12,7 +14,7 @@ const PendingUser = (props) => {
     const addFriend = async(e) => {
         console.log("Adding this friend to eachothers friends list");
         e.preventDefault()
-        const response = await fetch('/api/users/frienduser', {
+        const response = await fetch(BACKEND_URL + '/api/users/frienduser', {
         method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'
@@ -34,7 +36,7 @@ const PendingUser = (props) => {
             //setFriendResponse("The user " + userName + " was not found.");
         }
 
-        const response2 = await fetch('/api/users/removePending', {
+        const response2 = await fetch(BACKEND_URL + '/api/users/removePending', {
             method: 'PATCH',
               headers: {
                 'Content-Type': 'application/json'
@@ -61,7 +63,7 @@ const PendingUser = (props) => {
 
     const denyRequest = async() => {
 
-        const response2 = await fetch('/api/users/removePending', {
+        const response2 = await fetch(BACKEND_URL + '/api/users/removePending', {
             method: 'PATCH',
               headers: {
                 'Content-Type': 'application/json'

@@ -3,7 +3,7 @@ import {useLocation} from 'react-router-dom';
 import useToken from "../hooks/useToken";
 import { useNavigate } from 'react-router-dom';
 
-
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 const Pictures = () => {
     const [loading,setLoading] = useState(true);
     const {token, setToken } = useToken();
@@ -16,7 +16,7 @@ const Pictures = () => {
 
     useEffect(() => {
         const fetchFolder = async () => {
-            const fetchUrl = '/api/pictures/' + location.state.userId  + "/" + location.state.id;
+            const fetchUrl = BACKEND_URL + '/api/pictures/' + location.state.userId  + "/" + location.state.id;
             const response = await fetch(fetchUrl);
             const json = await response.json();
             var imagePathsTemp = [];

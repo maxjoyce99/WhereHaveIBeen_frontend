@@ -4,7 +4,8 @@ import useToken from "../hooks/useToken";
 import { useNavigate } from "react-router-dom";
 import {useLocation} from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
-import 'react-tooltip/dist/react-tooltip.css'
+import 'react-tooltip/dist/react-tooltip.css';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 const LocationForm = () => {
     const { dispatch } = useLocationsContext();
@@ -44,7 +45,7 @@ const LocationForm = () => {
         
         const location = { name, place, user};
 
-        const response = await fetch('/api/locations', {
+        const response = await fetch(BACKEND_URL+ '/api/locations', {
             method: 'POST',
             body: JSON.stringify(location),
             headers: {

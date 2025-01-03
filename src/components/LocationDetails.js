@@ -4,6 +4,8 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; //alert css. can make 
 import { useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const LocationDetails = ({location}) => {
     const { dispatch } = useLocationsContext();
     const {token, setToken} = useToken();
@@ -26,7 +28,7 @@ const LocationDetails = ({location}) => {
     }
 
     const handleDelete = async () => {
-            const response = await fetch('/api/locations/' + location._id, {
+            const response = await fetch(BACKEND_URL + '/api/locations/' + location._id, {
                 method: 'DELETE'
             });
 
@@ -36,7 +38,7 @@ const LocationDetails = ({location}) => {
                 dispatch({type: 'DELETE_LOCATION', payload: json});
             }
 
-            const picResponse = await fetch('/api/pictures/' + token._id + "/" + location._id, {
+            const picResponse = await fetch(BACKEND_URL + '/api/pictures/' + token._id + "/" + location._id, {
                 method: 'DELETE'
             });
 

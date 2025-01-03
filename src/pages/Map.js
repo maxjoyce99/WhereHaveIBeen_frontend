@@ -14,7 +14,8 @@ import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import LocationMarker from  '../components/LocationMarker';
 import useToken from '../hooks/useToken';
 
- 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const Map = () => {
   const {locations, dispatch} = useLocationsContext();
   const [ loading, setLoading ] = useState(true);
@@ -51,7 +52,7 @@ const Map = () => {
             else{
                 mapId = location.state.userId
             }
-            const response = await fetch('/api/locations/getall/' + mapId);
+            const response = await fetch(BACKEND_URL + '/api/locations/getall/' + mapId);
             const json = await response.json();
 
 

@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import { useFriendsContext } from "../hooks/useFriendsContext";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const UserDetails = (props) => {
     const {friends, pending, dispatchFriend} = useFriendsContext();
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ const UserDetails = (props) => {
 
     const handleUnfriend = async(e) => {
     
-        const fetchUrl = '/api/users/unfriend/';
+        const fetchUrl = BACKEND_URL + '/api/users/unfriend/';
         console.log(fetchUrl);
                 const response = await fetch(fetchUrl, {
                     method: 'PATCH',

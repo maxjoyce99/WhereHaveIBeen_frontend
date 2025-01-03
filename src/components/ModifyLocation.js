@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useLocationsContext } from '../hooks/useLocationsContext';
 import useToken from "../hooks/useToken";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+
 const ModifyLocation = (props) => {
     const { dispatch } = useLocationsContext();
     const [name,setName] = useState('');
@@ -31,7 +33,7 @@ const ModifyLocation = (props) => {
             console.log(formData);
         }
 
-        const routePath = '/api/pictures/' + token._id + "/" + props.id; //adds id to the route path
+        const routePath = BACKEND_URL + '/api/pictures/' + token._id + "/" + props.id; //adds id to the route path
         const response = await fetch(routePath, {
             method: 'POST',
             body: formData,
@@ -77,7 +79,7 @@ const ModifyLocation = (props) => {
                 "name": newName,
             }
 
-            const fetchUrl = '/api/locations/' + props.id;
+            const fetchUrl = BACKEND_URL + '/api/locations/' + props.id;
             const response = await fetch(fetchUrl, {
                 method: 'PATCH',
                 body: JSON.stringify(newLocation),
@@ -117,7 +119,7 @@ const ModifyLocation = (props) => {
                 }
             }
     
-            const fetchUrl = '/api/locations/' + props.id;
+            const fetchUrl = BACKEND_URL + '/api/locations/' + props.id;
             const response = await fetch(fetchUrl, {
                 method: 'PATCH',
                 body: JSON.stringify(newLocation),
@@ -162,7 +164,7 @@ const ModifyLocation = (props) => {
 
             
     
-            const fetchUrl = '/api/locations/' + props.id;
+            const fetchUrl = BACKEND_URL + '/api/locations/' + props.id;
             const response = await fetch(fetchUrl, {
                 method: 'PATCH',
                 body: JSON.stringify(newLocation),

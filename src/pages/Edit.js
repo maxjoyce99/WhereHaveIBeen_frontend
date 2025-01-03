@@ -7,6 +7,7 @@ import { useState } from 'react';
 import LocationDetails from '../components/LocationDetails';
 import LocationForm from '../components/LocationForm';
 import ImageUpload from '../components/ImageUpload';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 
 const Edit = () => {
@@ -16,7 +17,7 @@ const Edit = () => {
 
     useEffect(() => {
         const fetchLocations = async () => {
-            const response = await fetch('/api/locations/getall/' + token._id );
+            const response = await fetch(BACKEND_URL + '/api/locations/getall/' + token._id );
             const json = await response.json();
 
 

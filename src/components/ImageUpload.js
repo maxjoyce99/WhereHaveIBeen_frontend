@@ -4,7 +4,7 @@ import useToken from "../hooks/useToken";
 import { useLocationsContext } from '../hooks/useLocationsContext';
 import { Tooltip } from 'react-tooltip'
 
-
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 
 
 
@@ -38,7 +38,7 @@ const ImageUpload = () => {
 
         console.log(location);
 
-        const response = await fetch('/api/locations', {
+        const response = await fetch(BACKEND_URL + '/api/locations', {
             method: 'POST',
             body: JSON.stringify(location),
             headers: {
@@ -71,7 +71,7 @@ const ImageUpload = () => {
             console.log(formData);
         }
 
-        const routePath = '/api/pictures/' + token._id + "/" + id; //adds id to the route path
+        const routePath = BACKEND_URL + '/api/pictures/' + token._id + "/" + id; //adds id to the route path
         const response = await fetch(routePath, {
             method: 'POST',
             body: formData,
