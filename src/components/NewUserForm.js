@@ -23,11 +23,13 @@ const NewUser = ({ setToken }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
-        const newUser = await registerUser({
+
+        console.log(username);
+        const newUser = await registerUser(
           username,
           password,
-          email,
-        });
+          email
+        );
         
         if(newUser){
           setUserCreated(true);
@@ -37,9 +39,19 @@ const NewUser = ({ setToken }) => {
         
     }
 
-    const registerUser = async(newUser) => {
+    const registerUser = async(username, email, password) => {
+      console.log("newUser");
+      var newUser = {
+        username: username,
+        password: password,
+        email: email
+      }
+      console.log(JSON.stringify(newUser));
         const response = await fetch(BACKEND_URL + '/api/users/new' , {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',  // Ensure the content type is JSON
+          },
           body: JSON.stringify(newUser)
         });
 
