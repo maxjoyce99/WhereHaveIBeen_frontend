@@ -49,7 +49,7 @@ const Modify = () => {
         })
 
         if(response.ok){
-            var deletePath = "http://localhost:3001/uploads/" + token._id  + "/" + location.state.id + "/" + path;
+            var deletePath = BACKEND_URL + '/uploads' + token._id  + "/" + location.state.id + "/" + path;
             dispatchImage({type: 'DELETE_IMAGE', payload: deletePath});
         }
 
@@ -66,7 +66,7 @@ const Modify = () => {
             var imagePathsTemp = [];
 
             for(var i in json){
-                var imagePathStart = "http://localhost:3001/uploads/" + token._id  + "/" + location.state.id + "/"; //use path.join type thing???
+                var imagePathStart = BACKEND_URL + '/uploads' + token._id  + "/" + location.state.id + "/"; //use path.join type thing???
                 imagePathsTemp.push(imagePathStart + json[i]);
             }
 
