@@ -22,7 +22,7 @@ const Pictures = () => {
             var imagePathsTemp = [];
 
             for(var i in json){
-                var imagePathStart = BACKEND_URL + '/uploads' + location.state.userId  + "/" + location.state.id + "/"; //use path.join type thing???
+                var imagePathStart = BACKEND_URL + '/uploads/' + location.state.userId  + "/" + location.state.id + "/"; //use path.join type thing???
                 imagePathsTemp.push(imagePathStart + json[i]);
             }
 
